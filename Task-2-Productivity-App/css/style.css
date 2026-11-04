@@ -1,0 +1,353 @@
+
+/* =================================
+   1. GENERAL STYLING
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f172a;
+    color: #f1f5f9;
+    min-height: 100vh;
+}
+
+
+/* =================================
+   2. HEADER
+================================= */
+
+header {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-bottom: 1px solid #334155;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #a78bfa;
+}
+
+header p {
+    color: #cbd5e1;
+}
+
+
+/* =================================
+   3. MAIN CONTAINER
+================================= */
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 35px auto;
+}
+
+
+/* =================================
+   4. SECTION CARDS
+================================= */
+
+section {
+    background: #1e293b;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    margin-bottom: 18px;
+    color: #e2e8f0;
+}
+
+
+/* =================================
+   5. INPUTS AND SELECT
+================================= */
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+input,
+select {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #475569;
+    padding: 13px;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+}
+
+input {
+    flex: 1;
+    min-width: 150px;
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus {
+    border-color: #a78bfa;
+}
+
+
+/* =================================
+   6. BUTTONS
+================================= */
+
+button {
+    padding: 12px 17px;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   7. SEARCH SECTION
+================================= */
+
+.search-section input {
+    width: 100%;
+}
+
+
+/* =================================
+   8. FILTER BUTTONS
+================================= */
+
+.filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #334155;
+    color: #cbd5e1;
+}
+
+.filter-btn:hover {
+    background: #475569;
+}
+
+.filter-btn.active {
+    background: #7c3aed;
+    color: white;
+}
+
+
+/* =================================
+   9. TASK LIST
+================================= */
+
+#taskList {
+    list-style: none;
+}
+
+#taskList li {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    transition: 0.3s ease;
+}
+
+#taskList li:hover {
+    border-color: #7c3aed;
+}
+
+#taskList li span {
+    flex: 1;
+    min-width: 180px;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   10. FOOTER
+================================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #94a3b8;
+    border-top: 1px solid #334155;
+}
+
+
+/* =================================
+   11. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form input,
+    form select,
+    form button {
+        width: 100%;
+    }
+
+    .filters {
+        justify-content: center;
+    }
+
+    .filter-btn {
+        flex: 1;
+        padding: 11px 8px;
+    }
+
+    #taskList li {
+        align-items: stretch;
+    }
+
+    #taskList li button {
+        flex: 1;
+    }
+
+}
+
+/* =================================
+   TASK STATISTICS DASHBOARD
+================================= */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat-card {
+    padding: 22px 15px;
+    border-radius: 10px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.stat-card.total p {
+    color: #a78bfa;
+}
+
+.stat-card.active p {
+    color: #38bdf8;
+}
+
+.stat-card.completed p {
+    color: #4ade80;
+}
+
+/* Mobile dashboard */
+
+@media (max-width: 600px) {
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =================================
+   TASK COMPLETION PROGRESS BAR
+================================= */
+
+.progress-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0f172a;
+    border-radius: 10px;
+}
+
+.progress-section h3 {
+    margin-bottom: 15px;
+    color: #e2e8f0;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+#progressPercentage {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #334155;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #22c55e;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
